@@ -7,8 +7,7 @@ public class Program
 
     static void Main()
     {
-       // bool ok;
-        int x= 0 ;
+       
         while(true)
         {
 
@@ -23,16 +22,8 @@ public class Program
             Console.ResetColor();
             var code = Console.ReadLine();                               
 
-           // string code="(1+);"  ;
-            //if(x==1)  code= "f(2);" ;  
-            //else if(x==2)   code="  cuatr(3);";
             if( string.IsNullOrWhiteSpace(code))    continue;
             
-            if(code=="clear")
-            {
-                Console.Clear();
-                continue;
-            }
 
             Parser parser = new Parser(code);
             var tree= parser.Parse();
@@ -51,8 +42,7 @@ public class Program
             {    
                 if(tree is Function f)
                 {
-                    x++;
-                   //ok=true;
+                   
                     continue;
                 }       
                 var resul = Execute.Evaluator(tree);
@@ -77,7 +67,7 @@ public class Program
        
             }
             
-            x++;
+          
         }
     }
 }
