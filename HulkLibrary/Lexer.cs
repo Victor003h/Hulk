@@ -282,8 +282,12 @@ namespace HUlK
                 }    
                 else if(char.IsDigit(code[i]) || code[i]=='.'  )
                 {
-                    if(code[i]=='.')   cont++;
-                    num+=code[i];
+                    if(code[i]=='.')
+                    {
+                        num+=',';
+                        cont++;
+                    }
+                    else num+=code[i];
                     
                 }    
             }
