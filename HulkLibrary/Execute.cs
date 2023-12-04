@@ -489,7 +489,7 @@ public class Execute
                         return new Result("error en funcion",TokenType.Error); 
                     }
 
-                    res=Math.Pow(aux,aux2);
+                    res=Math.Log(aux,aux2);
                     return new Result(res.ToString(),TokenType.NumberExpression);    
                 }
             }
