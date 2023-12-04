@@ -87,13 +87,13 @@ namespace HUlK
                 }
                 else if (code[i]=='=')
                 {
-                    if(code[i+1]=='=')
+                    if(i+1<code.Length && code[i+1]=='=')
                     {
                         Token nuevo = new Token("==", i, TokenType.EqualEqualToken);
                         token_list.Add(nuevo);
                         i++;
                     }
-                    else if(code[i+1]=='>')
+                    else if(i+1<code.Length && code[i+1]=='>')
                     {
                         Token nuevo = new Token("=>", i, TokenType.AssignmentFunctionToken);
                         token_list.Add(nuevo);
@@ -122,7 +122,7 @@ namespace HUlK
                 }
                 else if(code[i]=='>')
                 {
-                    if(code[i+1]=='=')
+                    if(i+1<code.Length && code[i+1]=='=')
                     {
                         Token nuevo = new Token(">=", i, TokenType.ComparisonToken);
                         token_list.Add(nuevo);
@@ -136,7 +136,7 @@ namespace HUlK
                 }
                 else if(code[i]=='<')
                 {
-                    if(code[i+1]=='=')
+                    if( i+1<code.Length && code[i+1]=='=')
                     {
                         Token nuevo = new Token("<=", i, TokenType.ComparisonToken);
                         token_list.Add(nuevo);
@@ -160,7 +160,7 @@ namespace HUlK
                 }
                 else if (code[i]=='!')
                 {
-                    if(code[i+1]=='=')
+                    if(i+1<code.Length && code[i+1]=='=')
                     {
                         Token nuevo = new Token("!=", i, TokenType.NotEqualToken);
                         token_list.Add(nuevo);
